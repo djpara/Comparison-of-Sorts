@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Comparison_of_Sorts" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PKg-dj-kcj">
+                                <rect key="frame" x="26" y="37.5" width="30" height="30"/>
+                                <state key="normal" title="Sort"/>
+                                <connections>
+                                    <action selector="sortPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="poP-33-ncd"/>
+                                </connections>
+                            </button>
+                            <stackView opaque="NO" contentMode="scaleToFill" spacing="3" translatesAutoresizingMaskIntoConstraints="NO" id="2Jv-qZ-dcZ">
+                                <rect key="frame" x="106.5" y="38" width="162" height="28"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="N = " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OAY-tU-MFJ">
+                                        <rect key="frame" x="0.0" y="0.0" width="32" height="28"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="4pX-4s-9rd">
+                                        <rect key="frame" x="35" y="0.0" width="127" height="29"/>
+                                        <segments>
+                                            <segment title="16"/>
+                                            <segment title="32"/>
+                                            <segment title="48"/>
+                                            <segment title="64"/>
+                                        </segments>
+                                        <connections>
+                                            <action selector="sortSizeSegmentChanged:" destination="BYZ-38-t0r" eventType="valueChanged" id="vKY-36-Qbz"/>
+                                        </connections>
+                                    </segmentedControl>
+                                </subviews>
+                            </stackView>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="8pV-mh-P4M">
+                                <rect key="frame" x="16" y="76" width="343" height="29"/>
+                                <segments>
+                                    <segment title="Insertion"/>
+                                    <segment title="Selection"/>
+                                    <segment title="Quick"/>
+                                    <segment title="Merge"/>
+                                </segments>
+                                <connections>
+                                    <action selector="topSortSegmentChanged:" destination="BYZ-38-t0r" eventType="valueChanged" id="XvE-Dg-k43"/>
+                                </connections>
+                            </segmentedControl>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="zjV-QQ-xZr">
+                                <rect key="frame" x="16" y="344" width="343" height="29"/>
+                                <segments>
+                                    <segment title="Insertion"/>
+                                    <segment title="Selection"/>
+                                    <segment title="Quick"/>
+                                    <segment title="Merge"/>
+                                </segments>
+                                <connections>
+                                    <action selector="bottomSortSegmentChanged:" destination="BYZ-38-t0r" eventType="valueChanged" id="V1a-Yb-Vb4"/>
+                                </connections>
+                            </segmentedControl>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aNf-Ks-6MU" customClass="TopView" customModule="Comparison_of_Sorts" customModuleProvider="target">
+                                <rect key="frame" x="19.5" y="124" width="336" height="200"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="336" id="Ebe-oi-J5e"/>
+                                    <constraint firstAttribute="height" constant="200" id="HfB-kw-WXy"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="30A-g3-jAm" customClass="BottomView" customModule="Comparison_of_Sorts" customModuleProvider="target">
+                                <rect key="frame" x="19.5" y="392" width="336" height="200"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="200" id="WNJ-We-2NO"/>
+                                    <constraint firstAttribute="width" constant="336" id="w3x-JB-C1d"/>
+                                </constraints>
+                            </view>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="8Nc-2d-zZC">
+                                <rect key="frame" x="329" y="42.5" width="20" height="20"/>
+                            </activityIndicatorView>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="zjV-QQ-xZr" firstAttribute="top" secondItem="aNf-Ks-6MU" secondAttribute="bottom" constant="20" id="4TI-Lu-hWz"/>
+                            <constraint firstItem="30A-g3-jAm" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="958-oD-YhN"/>
+                            <constraint firstItem="2Jv-qZ-dcZ" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="18" id="F9R-0i-02L"/>
+                            <constraint firstItem="8pV-mh-P4M" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="KSk-JI-WnZ"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="zjV-QQ-xZr" secondAttribute="trailing" id="OH5-0m-1fe"/>
+                            <constraint firstItem="zjV-QQ-xZr" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="UkG-p4-Vv4"/>
+                            <constraint firstItem="8Nc-2d-zZC" firstAttribute="centerY" secondItem="2Jv-qZ-dcZ" secondAttribute="centerY" id="gto-mm-QHZ"/>
+                            <constraint firstItem="PKg-dj-kcj" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="10" id="k8V-9F-ssZ"/>
+                            <constraint firstItem="aNf-Ks-6MU" firstAttribute="top" secondItem="8pV-mh-P4M" secondAttribute="bottom" constant="20" id="lOZ-aV-0xo"/>
+                            <constraint firstItem="2Jv-qZ-dcZ" firstAttribute="centerY" secondItem="PKg-dj-kcj" secondAttribute="centerY" id="q2g-Iu-yqH"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="8pV-mh-P4M" secondAttribute="trailing" id="qlC-7B-Ae5"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="8Nc-2d-zZC" secondAttribute="trailing" constant="10" id="rcX-Sp-zIy"/>
+                            <constraint firstItem="8pV-mh-P4M" firstAttribute="top" secondItem="2Jv-qZ-dcZ" secondAttribute="bottom" constant="10" id="sLb-WT-96S"/>
+                            <constraint firstItem="2Jv-qZ-dcZ" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="sm5-8f-wZO"/>
+                            <constraint firstItem="30A-g3-jAm" firstAttribute="top" secondItem="zjV-QQ-xZr" secondAttribute="bottom" constant="20" id="vJV-5E-8cG"/>
+                            <constraint firstItem="aNf-Ks-6MU" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="zjf-SI-1K0"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="bottomDisplayView" destination="30A-g3-jAm" id="PFh-Sr-PUH"/>
+                        <outlet property="bottomSortSegment" destination="zjV-QQ-xZr" id="vaV-ng-xaP"/>
+                        <outlet property="indicator" destination="8Nc-2d-zZC" id="r6i-9q-074"/>
+                        <outlet property="sortButton" destination="PKg-dj-kcj" id="2aC-8P-BKU"/>
+                        <outlet property="sortSizeSegment" destination="4pX-4s-9rd" id="mn6-Fi-SHE"/>
+                        <outlet property="topDisplayView" destination="aNf-Ks-6MU" id="kcg-dc-Fb3"/>
+                        <outlet property="topSortSegment" destination="8pV-mh-P4M" id="OlJ-Vf-Odk"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1090" y="-34"/>
+        </scene>
+    </scenes>
+</document>
